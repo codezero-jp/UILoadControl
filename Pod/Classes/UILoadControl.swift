@@ -57,9 +57,10 @@ public class UILoadControl: UIControl {
         self.initialize(activityIndicatorStyle: .Gray)
     }
     
-    convenience init(target: AnyObject, action: Selector, style: UIActivityIndicatorViewStyle = .Gray) {
+    public convenience init(target: AnyObject, action: Selector, style: UIActivityIndicatorViewStyle = .Gray) {
         self.init()
         self.initialize(activityIndicatorStyle: style)
+        self.addTarget(target, action: action, forControlEvents: .ValueChanged)
     }
     
     /*
